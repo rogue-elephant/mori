@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+$padding: 10px;
+
+body {
+  font-family: 'Exo', sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+#header {
+  grid-area: header;
+  text-align: left;
+}
+#menu { grid-area: menu; }
+#main { grid-area: main; }
+#right { grid-area: right; }
+#footer { grid-area: footer; }
+
+.grid-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: $padding;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: max-content;
+  background-color: #303030;
+  color: #ffffff;
+}
+
+.grid-container > div {
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  padding: $padding;
+  font-size: 30px;
+}
